@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Connector">
+      <UniqueIdentifier>{7308711b-ed77-4af8-9bf1-d568beaafb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Connector">
+      <UniqueIdentifier>{af6ff112-7fe2-442e-b318-20730b7687b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Packet">
+      <UniqueIdentifier>{928243d2-f87a-4a58-99c5-1debe6fff08d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Packet">
+      <UniqueIdentifier>{086d2308-2a8c-4279-98b1-56215a683ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Server">
+      <UniqueIdentifier>{5f514e59-e7d1-4fa7-b159-d656625fffea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Server">
+      <UniqueIdentifier>{e15463a6-eb36-401b-accb-67ddb3a02886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Packet\Packets">
+      <UniqueIdentifier>{40e2d2f7-e9ed-48f2-aafc-5aacc7c66f3f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet\PacketBuffer.cpp">
+      <Filter>Quelldateien\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Connector\ConnectorServer.cpp">
+      <Filter>Quelldateien\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="Connector\ConnectorSession.cpp">
+      <Filter>Quelldateien\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet\PacketBuilder.cpp">
+      <Filter>Quelldateien\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\AccountServer.cpp">
+      <Filter>Quelldateien\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\AccountSession.cpp">
+      <Filter>Quelldateien\Server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Packet\PacketBuffer.h">
+      <Filter>Headerdateien\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Connector\ConnectorServer.h">
+      <Filter>Headerdateien\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="Connector\ConnectorSession.h">
+      <Filter>Headerdateien\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet\PacketBuilder.h">
+      <Filter>Headerdateien\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\AccountServer.h">
+      <Filter>Headerdateien\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\AccountSession.h">
+      <Filter>Headerdateien\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet\Packets\Packets.h">
+      <Filter>Headerdateien\Packet\Packets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

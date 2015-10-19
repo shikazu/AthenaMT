@@ -220,25 +220,50 @@ struct PACKET_CA_LOGIN4 {
 struct PACKET_CA_CLIENT_TYPE {
 	/* this+0x0 */ uint16_t PacketType;
 	/* this+0x2 */ uint16_t ClientType;
-	/* this+0x4 */ int nVer;
+	/* this+0x4 */ int32_t nVer;
+
+	PACKET_CA_CLIENT_TYPE(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x27f;
+		this->ClientType = buffer.getData<uint16_t>();
+		this->nVer = buffer.getData<int32_t>();
+	}
 };
 
 // packet 0x2b0
 struct PACKET_CA_LOGIN_HAN {
 	/* this+0x0 */ uint16_t PacketType;
-	/* this+0x2 */ unsigned long Version;
-	/* this+0x6 */ unsigned char ID[24];
-	/* this+0x1e */ unsigned char Passwd[24];
-	/* this+0x36 */ unsigned char clienttype;
-	/* this+0x37 */ char m_szIP[16];
-	/* this+0x47 */ unsigned char m_szMacAddr[13];
-	/* this+0x54 */ unsigned char isHanGameUser;
+	/* this+0x2 */ uint32_t Version;
+	/* this+0x6 */ std::string ID; // [24];
+	/* this+0x1e */ std::string Passwd; // [24];
+	/* this+0x36 */ uint8_t clienttype;
+	/* this+0x37 */ std::string m_szIP; // [16];
+	/* this+0x47 */ std::string m_szMacAddr; // [13];
+	/* this+0x54 */ uint8_t isHanGameUser;
+
+	PACKET_CA_LOGIN_HAN(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x2b0;
+		this->Version = buffer.getData<uint32_t>();
+		this->ID = buffer.getString(24);
+		this->Passwd = buffer.getString(24);
+		this->clienttype = buffer.getData<uint8_t>();
+		this->m_szIP = buffer.getString(16);
+		this->m_szMacAddr = buffer.getString(13);
+		this->isHanGameUser = buffer.getData<uint8_t>();
+	}
 };
 
 // packet 0x822
 struct PACKET_CA_OTP_AUTH_REQ {
 	/* this+0x0 */ uint16_t PacketType;
-	/* this+0x2 */ char OTPCode[7];
+	/* this+0x2 */ std::string OTPCode; //[7];
+
+	PACKET_CA_OTP_AUTH_REQ(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x822;
+		this->OTPCode = buffer.getString(7);
+	}
 };
 
 
@@ -246,43 +271,100 @@ struct PACKET_CA_OTP_AUTH_REQ {
 struct PACKET_CA_SSO_LOGIN_REQa {
 	/* this+0x0 */ uint16_t PacketType;
 	/* this+0x2 */ uint16_t PacketLength;
-	/* this+0x4 */ unsigned long Version;
-	/* this+0x8 */ unsigned char clienttype;
-	/* this+0x9 */ char ID[24];
-	/* this+0x21 */ char MacAddr[17];
-	/* this+0x32 */ char IpAddr[15];
-	/* this+0x41 */ char t1;// [...]
+	/* this+0x4 */ uint32_t Version;
+	/* this+0x8 */ uint8_t clienttype;
+	/* this+0x9 */ std::string ID; // [24];
+	/* this+0x21 */ std::string MacAddr; // [17];
+	/* this+0x32 */ std::string IpAddr; // [15];
+	/* this+0x41 */ std::string t1;// [...]
+
+	PACKET_CA_SSO_LOGIN_REQa(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x825a;
+		this->PacketLength = buffer.getData<uint16_t>();
+		this->Version = buffer.getData<uint32_t>();
+		this->clienttype = buffer.getData<uint8_t>();
+		this->ID = buffer.getString(24);
+		this->MacAddr = buffer.getString(17);
+		this->IpAddr = buffer.getString(15);
+
+		if (this->PacketLength < 65)
+		{
+			for (size_t i = 0; i < this->PacketLength - 65; i++)
+			{
+				this->t1.push_back(buffer.getData<char>());
+			}
+		}
+	}
 };
 
 // packet 0x825
 struct PACKET_CA_SSO_LOGIN_REQ {
 	/* this+0x0 */ uint16_t PacketType;
 	/* this+0x2 */ uint16_t PacketLength;
-	/* this+0x4 */ unsigned long Version;
-	/* this+0x8 */ unsigned char clienttype;
-	/* this+0x9 */ unsigned char ID[24];
-	/* this+0x21 */ unsigned char Passwd[27];
-	/* this+0x3c */ char MacAdress[17];
-	/* this+0x4d */ char IP[15];
-	/* this+0x5c */ char t1; // [...]
+	/* this+0x4 */ uint32_t Version;
+	/* this+0x8 */ uint8_t clienttype;
+	/* this+0x9 */ std::string ID; // [24];
+	/* this+0x21 */ std::string Passwd; // [27];
+	/* this+0x3c */ std::string MacAdress; // [17];
+	/* this+0x4d */ std::string IP; // [15];
+	/* this+0x5c */ std::string t1; // [...]
+
+	PACKET_CA_SSO_LOGIN_REQ(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x825;
+		this->PacketLength = buffer.getData<uint16_t>();
+		this->Version = buffer.getData<uint32_t>();
+		this->clienttype = buffer.getData<uint8_t>();
+		this->ID = buffer.getString(24);
+		this->Passwd = buffer.getString(27);
+		this->MacAdress = buffer.getString(17);
+		this->IP = buffer.getString(15);
+
+		if (this->PacketLength < 92)
+		{
+			for (size_t i = 0; i < this->PacketLength - 92; i++)
+			{
+				this->t1.push_back(buffer.getData<char>());
+			}
+		}
+	}
 };
 
 // packet 0x8cc
 struct PACKET_CA_LOGIN5 {
 	/* this+0x0 */ uint16_t PacketType;
-	/* this+0x2 */ unsigned long Version;
-	/* this+0x6 */ unsigned char ID[51];
-	/* this+0x39 */ unsigned char Passwd[51];
-	/* this+0x6c */ unsigned char clienttype;
+	/* this+0x2 */ uint32_t Version;
+	/* this+0x6 */ std::string ID; // [51];
+	/* this+0x39 */ std::string Passwd; // [51];
+	/* this+0x6c */ uint8_t clienttype;
+
+	PACKET_CA_LOGIN5(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x8cc;
+		this->Version = buffer.getData<uint32_t>();
+		this->ID = buffer.getString(51);
+		this->Passwd = buffer.getString(51);
+		this->clienttype = buffer.getData<uint8_t>();
+	}
 };
 
 // packet 0x987
 struct PACKET_CA_LOGIN6 {
 	/* this+0x0 */ uint16_t PacketType;
-	/* this+0x2 */ unsigned long Version;
-	/* this+0x6 */ unsigned char ID[24];
-	/* this+0x1e */ unsigned char PasswdMD5[32];
-	/* this+0x3e */ unsigned char clienttype;
+	/* this+0x2 */ uint32_t Version;
+	/* this+0x6 */ std::string ID; // [24];
+	/* this+0x1e */ std::string PasswdMD5; // [32];
+	/* this+0x3e */ uint8_t clienttype;
+
+	PACKET_CA_LOGIN6(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x987;
+		this->Version = buffer.getData<uint32_t>();
+		this->ID = buffer.getString(24);
+		this->PasswdMD5 = buffer.getString(32);
+		this->clienttype = buffer.getData<uint8_t>();
+	}
 };
 
 // packet 0x98c

@@ -290,7 +290,7 @@ struct PACKET_CA_SSO_LOGIN_REQa {
 
 		if (this->PacketLength < 65)
 		{
-			for (size_t i = 0; i < this->PacketLength - 65; i++)
+			for (uint16_t i = 0; i < this->PacketLength - 65; i++)
 			{
 				this->t1.push_back(buffer.getData<char>());
 			}
@@ -323,7 +323,7 @@ struct PACKET_CA_SSO_LOGIN_REQ {
 
 		if (this->PacketLength < 92)
 		{
-			for (size_t i = 0; i < this->PacketLength - 92; i++)
+			for (uint16_t i = 0; i < this->PacketLength - 92; i++)
 			{
 				this->t1.push_back(buffer.getData<char>());
 			}

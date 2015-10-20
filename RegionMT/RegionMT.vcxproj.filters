@@ -21,15 +21,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Connector\ConnectorClient.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Connector\RedisConnector.cpp">
+      <Filter>Quelldateien\Connector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Connector\ConnectorClient.h">
+    <ClInclude Include="Connector\RedisConnector.h">
       <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
   </ItemGroup>

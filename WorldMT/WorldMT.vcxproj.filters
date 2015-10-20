@@ -45,15 +45,6 @@
     <ClCompile Include="World\WorldMain.cpp">
       <Filter>Quelldateien\World</Filter>
     </ClCompile>
-    <ClCompile Include="Connector\ConnectorClient.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
-    <ClCompile Include="Connector\ConnectorServer.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
-    <ClCompile Include="Connector\ConnectorSession.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
     <ClCompile Include="Packet\PacketBuffer.cpp">
       <Filter>Quelldateien\Packet</Filter>
     </ClCompile>
@@ -63,19 +54,13 @@
     <ClCompile Include="Server\WorldSession.cpp">
       <Filter>Quelldateien\Server</Filter>
     </ClCompile>
+    <ClCompile Include="Connector\RedisConnector.cpp">
+      <Filter>Quelldateien\Connector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World\WorldMain.h">
       <Filter>Headerdateien\World</Filter>
-    </ClInclude>
-    <ClInclude Include="Connector\ConnectorClient.h">
-      <Filter>Headerdateien\Connector</Filter>
-    </ClInclude>
-    <ClInclude Include="Connector\ConnectorServer.h">
-      <Filter>Headerdateien\Connector</Filter>
-    </ClInclude>
-    <ClInclude Include="Connector\ConnectorSession.h">
-      <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
     <ClInclude Include="Packet\PacketBuffer.h">
       <Filter>Headerdateien\Packet</Filter>
@@ -85,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Server\WorldSession.h">
       <Filter>Headerdateien\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Connector\RedisConnector.h">
+      <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -84,11 +84,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Connector\ConnectorClient.cpp" />
+    <ClCompile Include="Connector\RedisConnector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Connector\ConnectorClient.h" />
+    <ClInclude Include="Connector\RedisConnector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

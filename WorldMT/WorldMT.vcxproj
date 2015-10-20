@@ -84,9 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Connector\ConnectorClient.cpp" />
-    <ClCompile Include="Connector\ConnectorServer.cpp" />
-    <ClCompile Include="Connector\ConnectorSession.cpp" />
+    <ClCompile Include="Connector\RedisConnector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Packet\PacketBuffer.cpp" />
     <ClCompile Include="Server\WorldServer.cpp" />
@@ -94,9 +92,7 @@
     <ClCompile Include="World\WorldMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Connector\ConnectorClient.h" />
-    <ClInclude Include="Connector\ConnectorServer.h" />
-    <ClInclude Include="Connector\ConnectorSession.h" />
+    <ClInclude Include="Connector\RedisConnector.h" />
     <ClInclude Include="Packet\PacketBuffer.h" />
     <ClInclude Include="Server\WorldServer.h" />
     <ClInclude Include="Server\WorldSession.h" />

@@ -4,6 +4,8 @@
 #include "Server\AccountServer.h"
 #include "Connector\RedisAccountSubscription.hpp"
 
+#include "../Common/3rdParty/json/picojson.h"
+
 #include <boost/thread.hpp>
 #include <boost/bind.hpp>
 

@@ -13,9 +13,9 @@ namespace Packet
 
 	public:
 		template<typename T>
-		void append(T value)
+		void append(T* value)
 		{
-			uint8_t* p = &value;
+			uint8_t* p = (uint8_t*)value;
 			for (size_t i = 0; i < sizeof(T); i++)
 			{
 				this->buffer.push_back((uint8_t)p[i]);

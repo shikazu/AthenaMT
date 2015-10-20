@@ -46,6 +46,9 @@
     <Filter Include="Quelldateien\3rdParty\RedisClient">
       <UniqueIdentifier>{f0653abc-96e1-4ba1-989a-aeee6f40cf32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\3rdParty\PicoJSON">
+      <UniqueIdentifier>{a97bb2eb-aa93-4deb-9e30-c42a5b88dec7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -130,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="Connector\RedisAccountSubscription.hpp">
       <Filter>Headerdateien\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\json\picojson.h">
+      <Filter>Headerdateien\3rdParty\PicoJSON</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

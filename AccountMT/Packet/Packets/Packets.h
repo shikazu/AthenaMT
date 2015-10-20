@@ -383,24 +383,21 @@ struct PACKET_CA_ACK_NEW_USER {
 /* Packets from Account to Client */
 
 struct SERVER_ADDR { // Size 32
-	/* this+0x0 */ unsigned long ip;
+	/* this+0x0 */ uint32_t ip;
 	/* this+0x4 */ uint16_t port;
-	/* this+0x6 */ unsigned char name[20];
-	/* this+0x1a */ unsigned short usercount;
-	/* this+0x1c */ unsigned short state;
-	/* this+0x1e */ unsigned short property;
+	/* this+0x6 */ std::string name; // [20];
+	/* this+0x1a */ uint16_t usercount;
+	/* this+0x1c */ uint16_t state;
+	/* this+0x1e */ uint16_t property;
 
-	Packet::PacketBuilder getPacket()
+	void getPacket(Packet::PacketBuilder &builder)
 	{
-		PacketBuilder builder;
-
-		builder.append(ip);
-		builder.append(port);
+		builder.append<uint32_t>(&ip);
+		builder.append<uint16_t>(&port);
 		builder.appendString(name, 20);
-		builder.append(usercount);
-		builder.append(state);
-
-		return builder;
+		builder.append<uint16_t>(&usercount);
+		builder.append<uint16_t>(&state);
+		builder.append<uint16_t>(&property);
 	}
 };
 

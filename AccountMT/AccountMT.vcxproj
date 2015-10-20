@@ -99,6 +99,7 @@
     <ClCompile Include="Server\AccountSession.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\3rdParty\json\picojson.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\config.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisasyncclient.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisbuffer.h" />

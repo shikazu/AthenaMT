@@ -54,12 +54,6 @@
     <ClCompile Include="Packet\PacketBuffer.cpp">
       <Filter>Quelldateien\Packet</Filter>
     </ClCompile>
-    <ClCompile Include="Connector\ConnectorServer.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
-    <ClCompile Include="Connector\ConnectorSession.cpp">
-      <Filter>Quelldateien\Connector</Filter>
-    </ClCompile>
     <ClCompile Include="Packet\PacketBuilder.cpp">
       <Filter>Quelldateien\Packet</Filter>
     </ClCompile>
@@ -91,12 +85,6 @@
   <ItemGroup>
     <ClInclude Include="Packet\PacketBuffer.h">
       <Filter>Headerdateien\Packet</Filter>
-    </ClInclude>
-    <ClInclude Include="Connector\ConnectorServer.h">
-      <Filter>Headerdateien\Connector</Filter>
-    </ClInclude>
-    <ClInclude Include="Connector\ConnectorSession.h">
-      <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
     <ClInclude Include="Packet\PacketBuilder.h">
       <Filter>Headerdateien\Packet</Filter>

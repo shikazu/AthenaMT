@@ -91,8 +91,6 @@
     <ClCompile Include="..\Common\3rdParty\redisclient\redisparser.cpp" />
     <ClCompile Include="..\Common\3rdParty\redisclient\redissyncclient.cpp" />
     <ClCompile Include="..\Common\3rdParty\redisclient\redisvalue.cpp" />
-    <ClCompile Include="Connector\ConnectorServer.cpp" />
-    <ClCompile Include="Connector\ConnectorSession.cpp" />
     <ClCompile Include="Connector\RedisConnector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Packet\PacketBuilder.cpp" />
@@ -110,8 +108,6 @@
     <ClInclude Include="..\Common\3rdParty\redisclient\redissyncclient.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisvalue.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\version.h" />
-    <ClInclude Include="Connector\ConnectorServer.h" />
-    <ClInclude Include="Connector\ConnectorSession.h" />
     <ClInclude Include="Connector\RedisConnector.h" />
     <ClInclude Include="Packet\PacketBuilder.h" />
     <ClInclude Include="Packet\PacketBuffer.h" />

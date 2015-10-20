@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include "Connector\ConnectorServer.h"
 #include "Connector\RedisConnector.h"
 #include "Server\AccountServer.h"
 
@@ -11,7 +10,6 @@ boost::asio::io_service io_service;
 
 int main(int argc, char** argv)
 {
-	Connector::ConnectorServer connector_server(io_service, 25000);
 	Account::AccountServer account_server(io_service, 6900);
 	RedisAsyncClient redis_async(io_service);
 
@@ -24,7 +22,7 @@ int main(int argc, char** argv)
 
 	client.asyncConnect(endpoint, boost::bind(&Connector::RedisConnector::onConnect, &redis, _1, _2));
 
-	std::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 	t.join();
 
 	return 0;

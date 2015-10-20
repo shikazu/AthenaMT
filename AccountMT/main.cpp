@@ -1,10 +1,8 @@
 #include <iostream>
 
 #include "Connector\ConnectorServer.h"
+#include "Connector\RedisConnector.h"
 #include "Server\AccountServer.h"
-
-/*#include "../Common/3rdParty/chaiscript/chaiscript.hpp"
-#include "../Common/3rdParty/chaiscript/chaiscript_stdlib.hpp"*/
 
 #include <boost/thread.hpp>
 #include <boost/bind.hpp>
@@ -15,6 +13,16 @@ int main(int argc, char** argv)
 {
 	Connector::ConnectorServer connector_server(io_service, 25000);
 	Account::AccountServer account_server(io_service, 6900);
+	RedisAsyncClient redis_async(io_service);
+
+	boost::asio::ip::address address = boost::asio::ip::address::from_string("127.0.0.1");
+	const unsigned short port = 6379;
+
+	RedisAsyncClient client(io_service);
+	Connector::RedisConnector redis(io_service, client);
+	boost::asio::ip::tcp::endpoint endpoint(address, port);
+
+	client.asyncConnect(endpoint, boost::bind(&Connector::RedisConnector::onConnect, &redis, _1, _2));
 
 	std::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 	t.join();

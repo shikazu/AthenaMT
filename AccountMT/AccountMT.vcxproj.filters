@@ -46,18 +46,6 @@
     <Filter Include="Quelldateien\3rdParty\RedisClient">
       <UniqueIdentifier>{f0653abc-96e1-4ba1-989a-aeee6f40cf32}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\3rdParty\ChaiScript">
-      <UniqueIdentifier>{40a352ee-7495-4de5-a1ce-998b40b7e080}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\3rdParty\ChaiScript\dispatchkit">
-      <UniqueIdentifier>{7ba445ea-62c0-41b9-8fe1-e4b3d1cf8901}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\3rdParty\ChaiScript\language">
-      <UniqueIdentifier>{fbd8cda2-36e1-4bfe-bf52-137ae3bf6974}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\3rdParty\ChaiScript\utility">
-      <UniqueIdentifier>{e6bdfeed-ce83-4665-ae07-c8cf7546b4e4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="..\Common\3rdParty\redisclient\redisvalue.cpp">
       <Filter>Quelldateien\3rdParty\RedisClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Connector\RedisConnector.cpp">
+      <Filter>Quelldateien\Connector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,112 +137,8 @@
     <ClInclude Include="..\Common\3rdParty\redisclient\version.h">
       <Filter>Headerdateien\3rdParty\RedisClient</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript</Filter>
+    <ClInclude Include="Connector\RedisConnector.h">
+      <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_defines.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_stdlib.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_threading.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\any.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bad_boxed_cast.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bind_first.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bootstrap.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bootstrap_stl.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_cast.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_cast_helper.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_number.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_value.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dispatchkit.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dynamic_object.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dynamic_object_detail.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\exception_specification.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\function_call.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\function_call_detail.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\handle_return.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\operators.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_constructors.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_functions.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_functions_detail.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\register_function.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\type_conversions.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\type_info.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\dispatchkit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_algebraic.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_common.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_engine.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_eval.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_parser.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_prelude_docs.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\utility\utility.hpp">
-      <Filter>Headerdateien\3rdParty\ChaiScript\utility</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Common\3rdParty\chaiscript\language\chaiscript_prelude.chai">
-      <Filter>Headerdateien\3rdParty\ChaiScript\language</Filter>
-    </None>
   </ItemGroup>
 </Project>

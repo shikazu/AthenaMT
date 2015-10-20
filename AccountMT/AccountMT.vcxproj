@@ -93,6 +93,7 @@
     <ClCompile Include="..\Common\3rdParty\redisclient\redisvalue.cpp" />
     <ClCompile Include="Connector\ConnectorServer.cpp" />
     <ClCompile Include="Connector\ConnectorSession.cpp" />
+    <ClCompile Include="Connector\RedisConnector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Packet\PacketBuilder.cpp" />
     <ClCompile Include="Packet\PacketBuffer.cpp" />
@@ -100,40 +101,6 @@
     <ClCompile Include="Server\AccountSession.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_defines.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_stdlib.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\chaiscript_threading.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\any.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bad_boxed_cast.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bind_first.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bootstrap.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\bootstrap_stl.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_cast.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_cast_helper.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_number.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\boxed_value.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dispatchkit.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dynamic_object.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\dynamic_object_detail.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\exception_specification.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\function_call.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\function_call_detail.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\handle_return.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\operators.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_constructors.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_functions.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\proxy_functions_detail.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\register_function.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\type_conversions.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\dispatchkit\type_info.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_algebraic.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_common.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_engine.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_eval.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_parser.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\language\chaiscript_prelude_docs.hpp" />
-    <ClInclude Include="..\Common\3rdParty\chaiscript\utility\utility.hpp" />
     <ClInclude Include="..\Common\3rdParty\redisclient\config.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisasyncclient.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisbuffer.h" />
@@ -145,14 +112,12 @@
     <ClInclude Include="..\Common\3rdParty\redisclient\version.h" />
     <ClInclude Include="Connector\ConnectorServer.h" />
     <ClInclude Include="Connector\ConnectorSession.h" />
+    <ClInclude Include="Connector\RedisConnector.h" />
     <ClInclude Include="Packet\PacketBuilder.h" />
     <ClInclude Include="Packet\PacketBuffer.h" />
     <ClInclude Include="Packet\Packets\Packets.h" />
     <ClInclude Include="Server\AccountServer.h" />
     <ClInclude Include="Server\AccountSession.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Common\3rdParty\chaiscript\language\chaiscript_prelude.chai" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

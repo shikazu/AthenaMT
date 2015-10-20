@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio
+*.tlog
+*.log
+*.sdf
+*.lastbuildstate
+*.pdb
+*.opensdf

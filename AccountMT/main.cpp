@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
 
 #include "Connector\RedisConnector.h"
 #include "Server\AccountServer.h"
@@ -20,8 +23,44 @@ void publishHandler(RedisAsyncClient &publisher, const RedisValue &)
 	publisher.publish("Account", "Redis Account Test Message");
 } 
 
+std::string slurp(std::ifstream& in) {
+	return static_cast<std::stringstream const&>(std::stringstream() << in.rdbuf()).str();
+}
+
+std::string readFile(std::string fileName)
+{
+	std::ifstream ifs(fileName, std::ios::in | std::ios::binary);
+	if (ifs.is_open())
+	{
+		std::cout << "File has been opened!" << std::endl;
+		return slurp(ifs);
+	}
+	else
+	{
+		return "failed!";
+	}
+}
+
+
+
 int main(int argc, char** argv)
 {
+	std::string jsonConfig = readFile("config/account.json");
+
+	std::cout << "Config: " << jsonConfig << std::endl;
+
+	if (jsonConfig.length() > 0)
+	{
+		picojson::value value;
+		picojson::parse(value, jsonConfig);
+
+		picojson::object root_object = value.get<picojson::object>();
+		std::cout << root_object["redis"] << std::endl;
+
+		picojson::object redis_object = root_object["redis"].get<picojson::object>();
+		std::cout << redis_object["host"].get<std::string>() << ":" << redis_object["port"].get<double>() << std::endl;
+	}
+
 	Account::AccountServer account_server(io_service, 6900);
 
 	boost::asio::ip::address address = boost::asio::ip::address::from_string("127.0.0.1");

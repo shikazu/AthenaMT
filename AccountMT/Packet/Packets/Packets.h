@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "../PacketBuffer.h"
+#include "../PacketBuilder.h"
 
 /* Packets from Client to Account Server */
 
@@ -371,6 +372,12 @@ struct PACKET_CA_LOGIN6 {
 struct PACKET_CA_ACK_NEW_USER {
 	/* this+0x0 */ uint16_t PacketType;
 	/* this+0x2 */ uint16_t Sex;
+
+	PACKET_CA_ACK_NEW_USER(Packet::PacketBuffer &buffer)
+	{
+		this->PacketType = 0x98c;
+		this->Sex = buffer.getData<uint16_t>();
+	}
 };
 
 /* Packets from Account to Client */
@@ -382,6 +389,19 @@ struct SERVER_ADDR { // Size 32
 	/* this+0x1a */ unsigned short usercount;
 	/* this+0x1c */ unsigned short state;
 	/* this+0x1e */ unsigned short property;
+
+	Packet::PacketBuilder getPacket()
+	{
+		PacketBuilder builder;
+
+		builder.append(ip);
+		builder.append(port);
+		builder.appendString(name, 20);
+		builder.append(usercount);
+		builder.append(state);
+
+		return builder;
+	}
 };
 
 // packet 0x69

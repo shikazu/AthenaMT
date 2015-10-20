@@ -41,7 +41,4 @@ void RedisConnector::onGet(const RedisValue &value)
 	{
 		std::cerr << "Invalid value from redis: " << value.toString() << std::endl;
 	}
-
-	redisClient.command("DEL", redisKey,
-		boost::bind(&boost::asio::io_service::stop, boost::ref(ioService)));
 }

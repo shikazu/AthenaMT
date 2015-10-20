@@ -128,5 +128,8 @@
     <ClInclude Include="Connector\RedisConnector.h">
       <Filter>Headerdateien\Connector</Filter>
     </ClInclude>
+    <ClInclude Include="Connector\RedisAccountSubscription.hpp">
+      <Filter>Headerdateien\Connector</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

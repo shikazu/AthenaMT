@@ -1,42 +1,103 @@
-#ifndef _PACKET_PACKETBUFFER_H_
-#define _PACKET_PACKETBUFFER_H_
+
+#ifndef _BINARYBUFFER_HPP_
+#define _BINARYBUFFER_HPP_
 
 #include <vector>
+#include <cstring>
 #include <stdint.h>
-#include <queue>
 
 namespace Packet
 {
 	class PacketBuffer
 	{
 	private:
-		std::queue<uint8_t> buffer;
+		std::vector<char> buffer;
+		uint32_t position;
 
 	public:
-		PacketBuffer();
-		~PacketBuffer();
+		PacketBuffer()
+		{
+			position = 0;
+		}
+
+		template<typename T>
+		void append(T value)
+		{
+			unsigned int len = sizeof(value);
+
+			char data[len];
+			memcpy(data, &value, len);
+
+			for (unsigned int i = 0; i < len; i++)
+			{
+				buffer.push_back(data[i]);
+			}
+		}
+
+		void appendBuffer(char *buffer, size_t length)
+		{
+			for (size_t i = 0; i < length; i++)
+			{
+				this->buffer.push_back(buffer[i]);
+			}
+		}
+
+		size_t dataAvailable()
+		{
+			return (this->buffer.size() - position);
+		}
 
 		template<typename T>
 		T getData()
 		{
-			T result;
-			uint8_t *data = new uint8_t[sizeof(T)];
-			for (size_t i = 0; i < sizeof(T); i++)
+			T value;
+			unsigned int len = sizeof(T);
+			char *data = new char[sizeof(T)];
+
+			for (unsigned int i = 0; i < len; i++)
 			{
-				data[i] = this->buffer.front();
-				this->buffer.pop();
+				data[i] = buffer[position++];
 			}
-			std::copy(data, data + sizeof(T), (uint8_t*)&result);
+
+			memcpy(&value, data, len);
 			delete data;
-			return result;
+
+			return value;
 		}
 
-		std::string getString(size_t length);
+		std::string getString(size_t length)
+		{
+			std::string value;
+			bool terminated = false;
 
-		void appendPacket(char* packet, size_t packetLength);
+			for (size_t i = 0; i < length; i++)
+			{
+				char temp_val = this->getData<char>();
 
-		size_t data_available();
+				if (temp_val == 0)
+				{
+					terminated = true;
+				}
+
+				if (!terminated)
+				{
+					value.push_back(temp_val);
+				}
+			}
+
+			return value;
+		}
+
+		size_t getLength()
+		{
+			return buffer.size();
+		}
+
+		void clear()
+		{
+			this->buffer.clear();
+			position = 0;
+		}
 	};
 }
-
-#endif
+#endif // _BINARYBUFFER_HPP_

@@ -45,7 +45,7 @@ std::string readFile(std::string fileName)
 
 int main(int argc, char** argv)
 {
-	std::string jsonConfig = readFile("config/account.json");
+	/* std::string jsonConfig = readFile("config/account.json");
 
 	std::cout << "Config: " << jsonConfig << std::endl;
 
@@ -60,10 +60,11 @@ int main(int argc, char** argv)
 		picojson::object redis_object = root_object["redis"].get<picojson::object>();
 		std::cout << redis_object["host"].get<std::string>() << ":" << redis_object["port"].get<double>() << std::endl;
 	}
+	*/
 
 	Account::AccountServer account_server(io_service, 6900);
 
-	boost::asio::ip::address address = boost::asio::ip::address::from_string("127.0.0.1");
+	/*boost::asio::ip::address address = boost::asio::ip::address::from_string("127.0.0.1");
 	const unsigned short port = 6379;
 
 	RedisAsyncClient client(io_service);
@@ -96,7 +97,7 @@ int main(int argc, char** argv)
 			});
 		}
 	});
-
+	*/
 	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 	t.join();
 

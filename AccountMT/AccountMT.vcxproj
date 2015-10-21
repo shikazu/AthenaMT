@@ -94,7 +94,6 @@
     <ClCompile Include="Connector\RedisConnector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Packet\PacketBuilder.cpp" />
-    <ClCompile Include="Packet\PacketBuffer.cpp" />
     <ClCompile Include="Server\AccountServer.cpp" />
     <ClCompile Include="Server\AccountSession.cpp" />
   </ItemGroup>

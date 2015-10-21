@@ -54,9 +54,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Packet\PacketBuffer.cpp">
-      <Filter>Quelldateien\Packet</Filter>
-    </ClCompile>
     <ClCompile Include="Packet\PacketBuilder.cpp">
       <Filter>Quelldateien\Packet</Filter>
     </ClCompile>

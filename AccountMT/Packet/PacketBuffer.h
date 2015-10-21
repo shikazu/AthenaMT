@@ -1,6 +1,5 @@
-
-#ifndef _BINARYBUFFER_HPP_
-#define _BINARYBUFFER_HPP_
+#ifndef _PACKET_PACKETBUFFER_H_
+#define _PACKET_PACKETBUFFER_H_
 
 #include <vector>
 #include <cstring>

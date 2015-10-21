@@ -1,0 +1,11 @@
+{
+	"redis": {
+		"hostname": "localhost",
+		"port": 1234,
+		"channels": [
+			"Account",
+			"World",
+			"Region"
+		]
+	}
+}

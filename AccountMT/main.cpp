@@ -7,6 +7,8 @@
 #include "Server\AccountServer.h"
 #include "Connector\RedisAccountSubscription.hpp"
 
+#include "../Common/Configuration/Configuration.h"
+
 #include "../Common/3rdParty/json/picojson.h"
 
 #include <boost/thread.hpp>
@@ -45,6 +47,7 @@ std::string readFile(std::string fileName)
 
 int main(int argc, char** argv)
 {
+	Common::Configuration config;
 	/* std::string jsonConfig = readFile("config/account.json");
 
 	std::cout << "Config: " << jsonConfig << std::endl;

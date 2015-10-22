@@ -108,6 +108,7 @@
     <ClInclude Include="..\Common\3rdParty\redisclient\redissyncclient.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisvalue.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\version.h" />
+    <ClInclude Include="Configuration\Configuration.h" />
     <ClInclude Include="Connector\RedisAccountSubscription.hpp" />
     <ClInclude Include="Connector\RedisConnector.h" />
     <ClInclude Include="Packet\PacketBuilder.h" />

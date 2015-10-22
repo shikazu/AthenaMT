@@ -1,9 +1,20 @@
 {
-  "redis": {
-    "host": "127.0.0.1",
-    "port": 6379
-  },
-  "account-server": {
-    "port": 6900
-  }
+	"redis": {
+		"hostname": "localhost",
+		"port": 6379,
+		"subscribe": [ 
+			"Account"
+		],
+		"publish": [] 
+	},
+	"account": {
+		"port": 6900
+	},
+	"mongo": {
+		"hostname": "localhost",
+		"port": 2345,
+		"username": "user",
+		"password": "pass",
+		"database": "account"
+	}
 }

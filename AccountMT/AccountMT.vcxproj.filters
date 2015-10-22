@@ -49,6 +49,9 @@
     <Filter Include="Headerdateien\3rdParty\PicoJSON">
       <UniqueIdentifier>{a97bb2eb-aa93-4deb-9e30-c42a5b88dec7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Configuration">
+      <UniqueIdentifier>{0430a892-66b3-4231-b17c-2a40206761cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="..\Common\3rdParty\json\picojson.h">
       <Filter>Headerdateien\3rdParty\PicoJSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration\Configuration.h">
+      <Filter>Headerdateien\Configuration</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

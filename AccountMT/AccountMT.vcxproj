@@ -58,11 +58,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>-D_WIN32_WINNT=0x0501 -D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Users\mKirscht\Documents\GitHub\AthenaMT\Common\3rdParty\mysql++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\tmp\boost_1_59_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\tmp\boost_1_59_0\stage\lib;C:\Users\mKirscht\Documents\GitHub\AthenaMT\Common\3rdParty\mysql++\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,13 +78,15 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>-D_WIN32_WINNT=0x0501 -D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Users\mKirscht\Documents\GitHub\AthenaMT\Common\3rdParty\mysql++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\tmp\boost_1_59_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\tmp\boost_1_59_0\stage\lib;C:\Users\mKirscht\Documents\GitHub\AthenaMT\Common\3rdParty\mysql++\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -99,6 +103,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\3rdParty\json\picojson.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\build_config.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\config.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\connection.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\datatype.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\driver.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\exception.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\metadata.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\parameter_metadata.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\prepared_statement.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\resultset.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\resultset_metadata.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\sqlstring.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\statement.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\variant.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\version_info.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\warning.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_connection.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_driver.h" />
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_error.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\config.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisasyncclient.h" />
     <ClInclude Include="..\Common\3rdParty\redisclient\redisbuffer.h" />

@@ -52,6 +52,12 @@
     <Filter Include="Headerdateien\Configuration">
       <UniqueIdentifier>{0430a892-66b3-4231-b17c-2a40206761cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\3rdParty\mysql++">
+      <UniqueIdentifier>{7ebdba42-a077-46c6-b0b8-b9aef46bf963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\3rdParty\mysql++\cppconn">
+      <UniqueIdentifier>{0a26f0b7-f897-4cab-913d-1869597c22cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -139,6 +145,63 @@
     </ClInclude>
     <ClInclude Include="Configuration\Configuration.h">
       <Filter>Headerdateien\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_connection.h">
+      <Filter>Headerdateien\3rdParty\mysql++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_driver.h">
+      <Filter>Headerdateien\3rdParty\mysql++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\mysql_error.h">
+      <Filter>Headerdateien\3rdParty\mysql++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\build_config.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\config.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\connection.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\datatype.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\driver.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\exception.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\metadata.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\parameter_metadata.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\prepared_statement.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\resultset.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\resultset_metadata.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\sqlstring.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\statement.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\variant.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\version_info.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\3rdParty\mysql++\cppconn\warning.h">
+      <Filter>Headerdateien\3rdParty\mysql++\cppconn</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

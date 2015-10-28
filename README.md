@@ -6,8 +6,8 @@ Also AthenaMT comes with a completely new scripting language, called ChaiScript,
 ## Powered by C++ and Boost
 AthenaMT is relying on C++11 and the boost libraries, which helps us to develop the emulator faster and keep the source codes understandable. There is only one other dependency: MongoDB C++ Driver.
 
-## Redis and MongoDB
-Unlike other Ragnarok Online emulators, AthenaMT is using MongoDB as storage for all server related data and redis in order to synchronize all region servers. Since the data is cached in a central location, there are only a few things which needs to be transferred between the servers themselves.
+## Redis and MySQL
+As all the other Ragnarok Online emulators, AthenaMT is also using MySQL as storage for all server related data. We are also using redis in order to synchronize all region servers. Since the data is cached in a central location, there are only a few things which needs to be transferred between the servers themselves.
 
 ## Support AthenaMT
 AthenaMT has it's own IRC Channel. Come and join our community!
